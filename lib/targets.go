@@ -107,6 +107,8 @@ const (
 	HTTPTargetFormat = "http"
 	// JSONTargetFormat is the human readable identifier for the JSON target format.
 	JSONTargetFormat = "json"
+	// CURLTargetFormat is the human readable identifier for the CURL target format.
+	CURLTargetFormat = "curl"
 )
 
 // A Targeter decodes a Target or returns an error in case of failure.
