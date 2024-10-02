@@ -161,6 +161,8 @@ func attack(opts *attackOpts) (err error) {
 		tr = vegeta.NewJSONTargeter(src, body, hdr)
 	case vegeta.HTTPTargetFormat:
 		tr = vegeta.NewHTTPTargeter(src, body, hdr)
+	case vegeta.CURLTargetFormat:
+		tr = vegeta.NewCURLTargeter(src, body, hdr)
 	default:
 		return fmt.Errorf("format %q isn't one of [%s]",
 			opts.format, strings.Join(vegeta.TargetFormats, ", "))

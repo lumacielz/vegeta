@@ -229,6 +229,15 @@ func NewStaticTargeter(tgts ...Target) Targeter {
 	}
 }
 
+func NewCURLTargeter(src io.Reader, body []byte, header http.Header) Targeter {
+	return func(tgt *Target) (err error) {
+		if tgt == nil {
+			return ErrNilTarget
+		}
+		return nil
+	}
+}
+
 // ReadAllTargets eagerly reads all Targets out of the provided Targeter.
 func ReadAllTargets(t Targeter) (tgts []Target, err error) {
 	for {
